@@ -24,22 +24,33 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: Container(
-        color: Colors.black,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
           children: [
             Center(
-              child: Text(
-                "Hi There!!!\nI am Ashok Renangi\n❤️❤️❤️",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.cedarvilleCursive(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                    color: Colors.white),
+              child: Image.asset(
+                "lib/resources/news_logo_png.png",
+                height: height * 0.5,
+                fit: BoxFit.cover,
               ),
-            )
+            ),
+            Container(
+              // color: Colors.green,
+              height: height * 0.2,
+              child: Column(
+                children: [
+                  Text(
+                    "NEWS APP",
+                    style: GoogleFonts.poppins(
+                        fontSize: 28, fontWeight: FontWeight.w600),
+                  ),
+                  Text("created by ASHOK RENANGI")
+                ],
+              ),
+            ),
           ],
         ),
       ),
